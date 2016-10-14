@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Homepage</title>
+
+<!-- This template was created by Mantis-a [http://www.mantisa.cz/]. For more templates visit Free website templates [http://www.mantisatemplates.com/]. -->
+
+<meta name="Description" content="..." />
+<meta name="Keywords" content="..." />
+<meta name="robots" content="all,follow" />
+<meta name="author" content="..." />
+
+<!-- Javascript -->
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection, tv" />
+<link rel="stylesheet" href="css/style-print.css" type="text/css" media="print" />
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+
+
+<script language="JavaScript">
+function checkLoginID()
+    {
+        var loginId = document.LoginForm.loginID.value;
+        if(loginId.length == 0)
+        {
+            alert("Please Enter the Username");
+            document.LoginForm.loginID.focus();
+            return false;
+        }
+var len=loginId.length;
+for(i=0;i<len;i++) {
+var str=loginId.substring(i,i+1);
+if(!((str>="a" && str<="z")||(str>="A" && str<="Z")||(str==" ")||(str=="."))) {
+alert("Enter a valid login ID");
+document.LoginForm.loginID.focus();
+document.LoginForm.loginID.value="";
+return false;
+}
+}
+            return true;
+    }
+
+    function checkPassword()
+    {
+        var pass = document.LoginForm.password.value;
+        if(pass.length == 0)
+        {
+            alert("Please Enter the Password");
+            document.LoginForm.password.focus();
+            return false;
+        }
+if(pass.length<5) {
+alert("Password should have Five Characters");
+            document.LoginForm.password.focus();
+            document.LoginForm.password.value="";
+return false;
+}
+
+            return true;
+        }
+
+    function checkForm()
+    {
+        if(checkLoginID())
+        {
+            if(checkPassword())
+            {
+                document.LoginForm.submit();
+            }
+        }
+    }
+</script>
+
+</head>
+
+<body>
+
+<form action="login.jsp" method="get" name="LoginForm" onSubmit="return checkLoginID();">
+<div id="wrapper">
+
+		<!-- Header -->
+		
+  <div id="header"> 
+    <!-- Your website name  -->
+    <h1><font color="#FFFFFF"><marquee direction="right"> DATA LEAKAGE DETECTION</marquee></font></h1>
+    <!-- Your website name end -->
+    <!-- Your slogan -->
+    <!-- Your slogan end -->
+    <div id="header-arrow"></marquee></div>
+    <!-- Header end -->
+    <!-- Menu -->
+    <!-- Menu end -->
+  </div>
+  <div> &nbsp;&nbsp;&nbsp;&nbsp;</div>
+  <div> &nbsp;&nbsp;&nbsp;&nbsp;</div>
+  <div> &nbsp;&nbsp;&nbsp;&nbsp;</div>
+<hr  class="noscreen" />
+
+	<div  id="content-box">
+		<div id="content-box-in">
+
+			<a name="skip-menu"></a>
+			<!-- Content left -->
+			<div class="content-box-left">
+				<div class="content-box-left-in">					
+										   <img src="img/datamain1.jpg" width="602" height="355" alt="image" />
+										   
+										   
+										   <div>&nbsp;</div>
+										    <div>&nbsp;</div> 
+											<div>&nbsp;</div> <div>&nbsp;</div> <div>&nbsp;</div>
+											 <div>&nbsp;</div>
+										    <div>&nbsp;</div>
+											 <div>&nbsp;</div>
+											  <div>&nbsp;</div>
+				</div>
+			</div>
+			
+      <!-- Content left end -->
+   
+<hr class="noscreen" />
+
+			 
+           <div class="content-box-right">				
+                <h4>LOGIN</h4>
+				<div class="content-box-right-in">
+					
+          
+  <dl>
+    <dt>USERNAME: </dt>
+    <dt> 
+      <input name="loginID" type="textbox" >
+    </dt>
+    <dt>PASSWORD: </dt>
+    <dt> 
+      <input name="password" type="password" onBlur="checkForm();">
+    </dt>
+    <dt>&nbsp;</dt>
+    <dt >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <input style="background: url('../img/submit.jpeg')" type="button" name="login"value="LOGIN" onClick="checkForm();">
+      &nbsp;&nbsp;&nbsp;&nbsp; 
+      <input style="background: url('../img/submit.jpeg')" type="reset" name="clr" value="Clear">
+    </dt>
+  </dl>
+  <p>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="registration.jsp">New User</a></div>
+  </p>
+
+        </div>
+		
+		</form>
+        <div class="content-box-right-in"></div>
+			<div id="column-right-bottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+			 </div>
+			  
+			  
+			
+			
+<!-- Content right end -->
+
+
+	
+
+	
+</body>
+</html>
+
